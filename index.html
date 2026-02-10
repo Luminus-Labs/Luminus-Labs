@@ -1,87 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Bright Bench</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bright Bench: A creative and technical umbrella brand by Oliver Lebaigue.">
+    <title>Bright Bench | Oliver Lebaigue</title>
     
-    <body>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-        <!-- HEADER -->
-        <header>
-            <div class="logo-area">
-                <img src="logo.png" alt="Bright Bench Logo" class="logo">
-                <h1>bright bench</h1>
-            </div>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-            <div class="quick-links-container">
-                <button class="quick-links" id="quickLinksBtn">quick links</button>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <div class="logo-icon"></div>
+                    Bright Bench
+                </a>
+                
+                <div class="nav-right">
+                    <!-- Theme Switcher -->
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
+                        <span class="icon-sun">☀</span>
+                        <span class="icon-moon">☾</span>
+                    </button>
+
+                    <div class="nav-links">
+                        <a href="#about">About</a>
+                        <a href="#work">Work</a>
+                        <a href="#values">Values</a>
+                        <a href="https://github.com/oliver-lebaigue-bright-bench" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero container fade-in-section animation-reset">
+            <div class="hero-text">
+                <h1>Curiosity. Code. Craft.</h1>
+                <p>Bright Bench is a human-scale workshop where ideas are sketched, tested, and refined. A one-man operation building honest tools at the intersection of design and engineering.</p>
+                <div class="hero-actions">
+                    <a href="#work" class="btn btn-primary">View Projects</a>
+                    <a href="#about" class="btn btn-secondary">About Oliver</a>
+                </div>
             </div>
             
-            <!-- Modal -->
-            <div id="myModal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h3>Quick Links</h3>
-                    <a href="#home">Home</a>
-                    <a href="#our-projects">Our Projects</a>
+            <!-- Fake Browser Window (Hidden on Mobile) -->
+            <div class="hero-visual slide-in-right animation-reset">
+                <div class="browser-mockup">
+                    <div class="browser-header">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <div class="browser-content">
+                        <div class="code-skeleton">
+                            <div class="skeleton-line w-50"></div>
+                            <div class="skeleton-line w-80"></div>
+                            <div class="skeleton-line w-80"></div>
+                            <div class="skeleton-line w-30"></div>
+                            <div class="skeleton-line w-50"></div>
+                            <div class="skeleton-line w-80"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-    
-        </header>
-    
-        <!-- WELCOME BANNER -->
-        <section class="welcome">
-            <h2>welcome to bright bench,<br>glad to have you on board!</h2>
         </section>
-    
-        <!-- MAIN CONTENT -->
-        <main>
-            <!-- PANEL -->
-            <div class="panel">
-                <h3>meet the team</h3>
-                <div class="team-container">
-                    <div class="oliver">
-                        <h4>Oliver</h4>
-                        <p>
-                            I’m Oliver, the creator of Pet Paths and founder of Bright Bench,
-                            the umbrella brand for all my projects. I’m also the software
-                            engineer for my FIRST Tech Challenge robotics team, where I tackle
-                            tricky problems and keep our robot in line. Everything I do is
-                            driven by my love for building, learning, and experimenting with tech.
-                        </p>
+
+        <!-- Current Project: Flux-OS -->
+        <section class="container current-project fade-in-section animation-reset">
+            <div class="cp-card">
+                <div class="cp-icon">
+                    <!-- Using a terminal-like icon for OS -->
+                    <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM4 6H20V18H4V6Z" fill="currentColor"/>
+                        <path d="M6 10H8V12H6V10Z" fill="currentColor"/>
+                        <path d="M6 14H14V16H6V14Z" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="cp-content">
+                    <h3>
+                        Flux-OS
+                        <span class="cp-tag">Current Focus</span>
+                    </h3>
+                    <div class="cp-desc">
+                        <p>Flux-OS is a 32-bit, hobbyist operating system written from scratch in C and x86 Assembly. It aims to be a "Nothing OS" inspired desktop environment—minimalist, typography-driven, and philosophically bare metal.</p>
+                        <br>
+                        <p><strong>Vision:</strong> To create a desktop experience that feels like a digital instrument cluster. No bloat. No clutter. Just raw interaction between user and machine.</p>
+                        <br>
+                        <p>Currently in Pre-Alpha, the system boots successfully via GRUB into a protected-mode kernel. It features a custom software rasterizer (GFX) and a philosophy that exposes the Multiboot memory maps and interrupt descriptor tables to the user.</p>
+                        <br>
+                        <p>"The void is not empty. It is full of potential."</p>
                     </div>
-    
-                    <div class="gethin">
-                        <h4>Gethin<br>head designer in training</h4>
+                    <div class="cp-footer">
+                        <a href="https://flux-os.netlify.app" target="_blank" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Visit Site</a>
+                        <a href="https://github.com/oliver-lebaigue-2-bright-bench/Flux-OS" target="_blank" class="btn btn-secondary" style="padding: 8px 20px; font-size: 0.85rem;">View Repo</a>
                     </div>
                 </div>
             </div>
-        </main>
-        <script>
-            // Get the modal and button
-            var modal = document.getElementById("myModal");
-            var btn = document.getElementById("quickLinksBtn");
-            var span = document.getElementsByClassName("close")[0];
-        
-            // Open the modal when the button is clicked
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
-        
-            // Close the modal when the "x" button is clicked
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-        
-            // Close the modal when clicking outside of it
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
-        </script>
-    </body>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about fade-in-section animation-reset">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-image scale-in animation-reset">
+                        <img src="https://placehold.co/400x400/ffffff/0f172a.webp?text=image%20unavilable&font=roboto" alt="Oliver Lebaigue working at his desk" width="600" height="600">
+                    </div>
+                    <div class="about-content slide-in-left animation-reset">
+                        <h2 class="section-title">The Builder</h2>
+                        <p>Bright Bench isn't a faceless startup or a polished corporate studio. It is a one-man operation, created and run entirely by <strong>Oliver Lebaigue</strong>.</p>
+                        <p>From concept and design to development, iteration, and long-term maintenance, I handle every aspect. I treat this brand as a living space that is always evolving rather than a finished product.</p>
+                        <p>My approach is grounded in learning by doing and building in public. I treat technology not as magic, but as a set of understandable tools that reward persistence and curiosity.</p>
+                        <br>
+                        <a href="https://github.com/oliver-lebaigue-bright-bench" target="_blank" style="text-decoration: underline; text-underline-offset: 4px;">See my code on GitHub &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Selected Work -->
+        <section id="work" class="projects container fade-in-section animation-reset">
+            <h2 class="section-title">From the Bench</h2>
+            <div class="project-grid">
+                <!-- Project 1: Flux-OS -->
+                <article class="project-card">
+                    <div class="card-image">
+                        <img src="images/flux.png" alt="Flux-OS Code">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-tags">Systems Programming / Assembly</div>
+                        <h3 class="card-title">Flux-OS</h3>
+                        <p class="card-desc">A "Nothing OS" inspired desktop environment. Minimalist, typography-driven, and philosophically bare metal.</p>
+                        <a href="https://flux-os.netlify.app" target="_blank" class="card-link">View Live Site <span>&rarr;</span></a>
+                    </div>
+                </article>
+
+                <!-- Project 2: NextBeat -->
+                <article class="project-card">
+                    <div class="card-image">
+                        <img src="images/nextbeat.png" alt="NextBeat Party Interface">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-tags">Social / Real-time</div>
+                        <h3 class="card-title">NextBeat</h3>
+                        <p class="card-desc">A social music platform built for moments, not algorithms. A democratic queue system where every guest contributes exactly one song.</p>
+                        <a href="#" class="card-link">View Project <span>&rarr;</span></a>
+                    </div>
+                </article>
+
+                <!-- Project 3: Pet Paths (Added back to grid as a standard project) -->
+                <article class="project-card">
+                    <div class="card-image">
+                        <img src="https://pet-paths.netlify.app/favicon.ico" style="object-fit: contain; background: #fff; padding: 20px;" alt="Pet Paths Logo">
+                    </div>
+                    <div class="card-content">
+                        <div class="card-tags">Community / Safety</div>
+                        <h3 class="card-title">Pet Paths</h3>
+                        <p class="card-desc">A mapping tool that treats local experience as expertise. It turns fragmented knowledge about local routes into shared, useful safety data.</p>
+                        <a href="https://pet-paths.netlify.app" target="_blank" class="card-link">Visit Live Site <span>&rarr;</span></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Values / Design Language -->
+        <section id="values" class="manifesto fade-in-section animation-reset">
+            <div class="container">
+                <h2 class="section-title">The Approach</h2>
+                <div class="manifesto-grid">
+                    <div class="value-card">
+                        <span class="value-icon">◉</span>
+                        <h3 class="value-title">Clarity & Restraint</h3>
+                        <p class="value-text">Interfaces that feel calm, intentional, and honest. Avoiding visual noise in favor of thoughtful simplicity, letting typography breathe.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">◈</span>
+                        <h3 class="value-title">Fundamentals First</h3>
+                        <p class="value-text">Respecting clean structure and maintainable code. Well-considered simplicity often outperforms unnecessary complexity.</p>
+                    </div>
+                    <div class="value-card">
+                        <span class="value-icon">❖</span>
+                        <h3 class="value-title">Human Scale</h3>
+                        <p class="value-text">A workshop, not a factory. Every project is cared for deeply, with long hours spent refining small decisions rather than cutting corners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-cta">
+                <h3>Interested in the process?</h3>
+                <a href="https://github.com/oliver-lebaigue-bright-bench" target="_blank" class="github-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 0C5.37 0 0 5.37 0 12C0 17.31 3.435 21.795 8.205 23.385C8.805 23.49 9.03 23.13 9.03 22.815C9.03 22.53 9.015 21.585 9.015 20.58C6 21.135 5.22 19.845 4.98 19.17C4.845 18.825 4.26 17.76 3.75 17.475C3.33 17.25 2.73 16.695 3.735 16.68C4.68 16.665 5.355 17.55 5.58 17.91C6.66 19.725 8.385 19.215 9.075 18.9C9.18 18.12 9.495 17.595 9.84 17.295C7.17 16.995 4.38 15.96 4.38 11.37C4.38 10.065 4.845 8.985 5.61 8.145C5.49 7.845 5.07 6.615 5.73 4.965C5.73 4.965 6.735 4.65 9.03 6.195C9.99 5.925 11.01 5.79 12.03 5.79C13.05 5.79 14.07 5.925 15.03 6.195C17.325 4.635 18.33 4.965 18.33 4.965C18.99 6.615 18.57 7.845 18.45 8.145C19.215 8.985 19.68 10.05 19.68 11.37C19.68 15.975 16.875 16.995 14.205 17.295C14.64 17.67 15.015 18.39 15.015 19.515C15.015 21.12 15 22.42 15 22.815C15 23.13 15.225 23.505 15.825 23.385C20.565 21.795 24 17.31 24 12C24 5.37 18.63 0 12 0Z" fill="currentColor"/>
+                    </svg>
+                    Follow on GitHub
+                </a>
+            </div>
+            <p class="copyright">&copy; <span id="year"></span> Bright Bench. Built by Oliver Lebaigue with care.</p>
+        </div>
+    </footer>
+
+    <!-- External JS -->
+    <script src="script.js"></script>
+</body>
 </html>
