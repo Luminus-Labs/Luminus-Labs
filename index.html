@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bright Bench: A creative and technical umbrella brand by Oliver Lebaigue.">
-    <title>Bright Bench | Oliver Lebaigue</title>
+    <meta name="description" content="Bright Bench: A creative and technical umbrella brand by Oliver Lebaigue, Gethin Hughes, and Felix.">
+    <title>Bright Bench | The Team</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,18 @@
     
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Additional inline styles for the new section spacing -->
+    <style>
+        .current-focus-section {
+            padding-top: 6rem;
+            padding-bottom: 2rem;
+        }
+        
+        .current-focus-section .section-title {
+            margin-bottom: 2rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -47,10 +59,10 @@
         <section class="hero container fade-in-section animation-reset">
             <div class="hero-text">
                 <h1>Curiosity. Code. Craft.</h1>
-                <p>Bright Bench is a human-scale workshop where ideas are sketched, tested, and refined. A one-man operation building honest tools at the intersection of design and engineering.</p>
+                <p>Bright Bench is a human-scale workshop where ideas are sketched, tested, and refined. A team of creators building honest tools at the intersection of design and engineering.</p>
                 <div class="hero-actions">
                     <a href="#work" class="btn btn-primary">View Projects</a>
-                    <a href="#about" class="btn btn-secondary">About Oliver</a>
+                    <a href="#about" class="btn btn-secondary">Meet the Team</a>
                 </div>
             </div>
             
@@ -76,6 +88,83 @@
             </div>
         </section>
 
+        <!-- Team Section -->
+        <section id="about" class="team fade-in-section animation-reset">
+            <div class="container">
+                <h2 class="section-title">The Team</h2>
+                <div class="project-grid">
+                    <!-- Team Member: Oliver Lebaigue (Founder) -->
+                    <article class="project-card">
+                        <div class="card-image">
+                            <img src="https://github.com/oliver-lebaigue-bright-bench.png" alt="Oliver Lebaigue">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-tags">Founder / Developer</div>
+                            <h3 class="card-title">Oliver Lebaigue</h3>
+                            <p class="card-desc">The original creator and founder of Bright Bench. Systems programmer and designer building honest tools at the intersection of code and craft.</p>
+                            <a href="https://github.com/oliver-lebaigue-bright-bench" target="_blank" class="card-link">View GitHub <span>&rarr;</span></a>
+                        </div>
+                    </article>
+
+                    <!-- Team Member: Felix -->
+                    <article class="project-card">
+                        <div class="card-image">
+                            <img src="https://github.com/cubezockii.png" alt="Felix">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-tags">Developer</div>
+                            <h3 class="card-title">Cubezockii</h3>
+                            <p class="card-desc">Creative developer focused on bringing innovative ideas to life through code.</p>
+                            <a href="https://github.com/cubezockii" target="_blank" class="card-link">View GitHub <span>&rarr;</span></a>
+                        </div>
+                    </article>
+
+                    <!-- Team Member: Gethin Hughes -->
+                    <article class="project-card">
+                        <div class="card-image">
+                            <img src="https://github.com/gething-hughes-pet-paths.png" alt="Gethin Hughes">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-tags">Tester / Outreach</div>
+                            <h3 class="card-title">Gethin Hughes</h3>
+                            <p class="card-desc">Full-stack developer passionate about building robust and elegant solutions.</p>
+                            <a href="https://https://github.com/gething-hughes-pet-paths" target="_blank" class="card-link">View GitHub <span>&rarr;</span></a>
+                        </div>
+                    </article>
+
+                    <!-- Team Member: Sam -->
+                    <article class="project-card">
+                        <div class="card-image" style="display: flex; align-items: center; justify-content: center; background: var(--border-color);">
+                            <span style="font-size: 4rem; font-weight: 700; color: var(--text-muted);">S</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-tags">Graphic Design / Web Testing</div>
+                            <h3 class="card-title">Sam</h3>
+                            <p class="card-desc">Graphic designer and web-only tester bringing visual design and quality assurance to the team.</p>
+                        </div>
+                    </article>
+
+                    <!-- Community Card -->
+                    <article class="project-card card-span-2">
+                        <div class="card-image" style="display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--accent), #ff6b6b);">
+                            <span style="font-size: 4rem; font-weight: 700; color: white;">You</span>
+                        </div>
+                        <div class="card-content">
+                            <div class="card-tags">Join the Community</div>
+                            <h3 class="card-title">More to Come</h3>
+                            <p class="card-desc">We're always looking for creative minds to join our workshop. If you're interested in building honest tools at the intersection of design and engineering, reach out and say hello.</p>
+                            <a href="https://github.com/oliver-lebaigue-bright-bench" target="_blank" class="card-link">Get in Touch <span>&rarr;</span></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Focus Section -->
+        <section id="focus" class="current-focus-section container fade-in-section animation-reset">
+            <h2 class="section-title">Current Focus</h2>
+        </section>
+
         <!-- Current Project: Flux-OS -->
         <section class="container current-project fade-in-section animation-reset">
             <div class="cp-card">
@@ -90,7 +179,7 @@
                 <div class="cp-content">
                     <h3>
                         Flux-OS
-                        <span class="cp-tag">Current Focus</span>
+                        <span class="cp-tag">Active Development</span>
                     </h3>
                     <div class="cp-desc">
                         <p>Flux-OS is a 32-bit, hobbyist operating system written from scratch in C and x86 Assembly. It aims to be a "Nothing OS" inspired desktop environment—minimalist, typography-driven, and philosophically bare metal.</p>
@@ -104,25 +193,6 @@
                     <div class="cp-footer">
                         <a href="https://flux-os.netlify.app" target="_blank" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Visit Site</a>
                         <a href="https://github.com/oliver-lebaigue-2-bright-bench/Flux-OS" target="_blank" class="btn btn-secondary" style="padding: 8px 20px; font-size: 0.85rem;">View Repo</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="about fade-in-section animation-reset">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-image scale-in animation-reset">
-                        <img src="https://placehold.co/400x400/ffffff/0f172a.webp?text=image%20unavilable&font=roboto" alt="Oliver Lebaigue working at his desk" width="600" height="600">
-                    </div>
-                    <div class="about-content slide-in-left animation-reset">
-                        <h2 class="section-title">The Builder</h2>
-                        <p>Bright Bench isn't a faceless startup or a polished corporate studio. It is a one-man operation, created and run entirely by <strong>Oliver Lebaigue</strong>.</p>
-                        <p>From concept and design to development, iteration, and long-term maintenance, I handle every aspect. I treat this brand as a living space that is always evolving rather than a finished product.</p>
-                        <p>My approach is grounded in learning by doing and building in public. I treat technology not as magic, but as a set of understandable tools that reward persistence and curiosity.</p>
-                        <br>
-                        <a href="https://github.com/oliver-lebaigue-bright-bench" target="_blank" style="text-decoration: underline; text-underline-offset: 4px;">See my code on GitHub &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -210,7 +280,7 @@
                     Follow on GitHub
                 </a>
             </div>
-            <p class="copyright">&copy; <span id="year"></span> Bright Bench. Built by Oliver Lebaigue with care.</p>
+            <p class="copyright">&copy; <span id="year"></span> Bright Bench. Built by the team with care.</p>
         </div>
     </footer>
 
