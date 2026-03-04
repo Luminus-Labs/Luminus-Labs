@@ -6,9 +6,21 @@
     <meta name="description" content="Luminus Labs: A creative and technical umbrella brand by Oliver Lebaigue, Gethin Hughes, Startrail and Cubzockii.">
     <title>Luminus Labs</title>
     
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Luminus Labs">
+    <meta property="og:description" content="A human-scale workshop where ideas are sketched, tested, and refined. A team of creators building honest tools at the intersection of design and engineering.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://luminus-labs.netlify.app/">
+    <meta property="og:image" content="https://luminus-labs.netlify.app/images/flux.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Luminus Labs">
+    <meta name="twitter:description" content="A human-scale workshop where ideas are sketched, tested, and refined.">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    
     <style>
         .current-focus-section {
             padding-top: 6rem;
@@ -18,9 +30,97 @@
         .current-focus-section .section-title {
             margin-bottom: 2rem;
         }
+        
+        /* Preloader Styles */
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+        
+        .preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .preloader-content {
+            text-align: center;
+        }
+        
+        .preloader-logo {
+            width: 60px;
+            height: 60px;
+            border: 3px solid var(--border-color);
+            border-radius: 8px;
+            position: relative;
+            margin: 0 auto 20px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+        
+        .preloader-logo::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 4px;
+            right: 4px;
+            height: 3px;
+            background: var(--text-main);
+            transform: translateY(-50%);
+        }
+        
+        .preloader-text {
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(0.95); opacity: 0.7; }
+        }
+        
+        /* Skip to Content Link */
+        .skip-to-content {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 0 0 8px 8px;
+            font-weight: 600;
+            z-index: 10000;
+            transition: top 0.3s ease;
+        }
+        
+        .skip-to-content:focus {
+            top: 0;
+            outline: none;
+        }
     </style>
 </head>
 <body>
+    <!-- Skip to Content Link -->
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-logo"></div>
+            <div class="preloader-text">LUMINUS</div>
+        </div>
+    </div>
     <header>
         <div class="container">
             <nav>
@@ -46,7 +146,7 @@
         </div>
     </header>
 
-    <main>
+<main id="main-content">
         <section class="hero container fade-in-section animation-reset">
             <div class="hero-text">
                 <h1>Curiosity. Code. Craft.</h1>

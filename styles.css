@@ -24,6 +24,7 @@
     --accent-soft: rgba(217, 48, 37, 0.08);
     --border-color: #E5E5E5;
     --code-bg: #ffffff;
+    --dot-color: #D93025;
     
     /* Fonts */
     --font-body: 'NType', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -52,6 +53,7 @@
     --accent-soft: rgba(255, 59, 48, 0.1);
     --border-color: #222222;
     --code-bg: #000000;
+    --dot-color: rgba(255, 58, 48, 0.404);
 }
 
 /* RESET & BASE STYLES */
@@ -75,7 +77,7 @@ body {
     transition: background-color 0.4s ease, color 0.4s ease;
     
     /* Dot Pattern Background - Slightly more subtle */
-    background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+    background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
     background-size: 32px 32px;
 }
 

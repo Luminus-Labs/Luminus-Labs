@@ -1,5 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     
+    // 0. Preloader
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        window.addEventListener('load', () => {
+            // Minimum display time of 1.5 seconds for better UX
+            setTimeout(() => {
+                preloader.classList.add('hidden');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 600);
+            }, 1500);
+        });
+    }
+    
     // 1. Set Dynamic Year in Footer
     const yearSpan = document.getElementById('year');
     if (yearSpan) {
