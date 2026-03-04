@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Luminus Labs</title>
+    <meta name="description" content="The page you're looking for seems to have wandered off. Let's get you back to the workshop.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    
+    <style>
+        :root {
+            --bg-color: #F7F7F7;
+            --text-main: #121212;
+            --text-muted: #555555;
+            --accent: #D93025;
+            --border-color: #E5E5E5;
+        }
+        
+        [data-theme="dark"] {
+            --bg-color: #0A0A0A;
+            --text-main: #FAFAFA;
+            --text-muted: #888888;
+            --accent: #FF3B30;
+            --border-color: #222222;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'NType', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: radial-gradient(var(--accent) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        
+        .error-container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 600px;
+        }
+        
+        .error-code {
+            font-size: clamp(6rem, 15vw, 12rem);
+            font-weight: 700;
+            line-height: 1;
+            color: var(--accent);
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+        
+        .error-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .error-desc {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .error-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background-color: var(--text-main);
+            color: var(--bg-color);
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .error-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        .error-decoration {
+            margin-top: 3rem;
+            font-size: 3rem;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-code">404</div>
+        <h1 class="error-title">Page Not Found</h1>
+        <p class="error-desc">The page you're looking for seems to have wandered off into the void. Let's get you back to the workshop.</p>
+        <a href="/" class="error-link">← Back to Luminus Labs</a>
+        <div class="error-decoration">◉</div>
+    </div>
+</body>
+</html>
+

@@ -20,6 +20,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link rel="alternate" hreflang="en" href="?lang=en">
+    <link rel="alternate" hreflang="es" href="?lang=es">
+    <link rel="alternate" hreflang="fr" href="?lang=fr">
+    <link rel="alternate" hreflang="de" href="?lang=de">
+    <link rel="alternate" hreflang="ja" href="?lang=ja">
+    <link rel="alternate" hreflang="zh" href="?lang=zh">
+    <link rel="alternate" hreflang="cy" href="?lang=cy">
     
     <style>
         .current-focus-section {
@@ -155,9 +162,160 @@
             top: 0;
             outline: none;
         }
+        
+        /* Language Switcher */
+        .lang-switcher {
+            position: relative;
+        }
+        
+        .lang-btn {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 0.75rem;
+            transition: var(--transition);
+        }
+        
+        .lang-btn:hover {
+            border-color: var(--accent);
+        }
+        
+        .lang-dropdown {
+            position: absolute;
+            top: calc(100% + 8px);
+            right: 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 8px;
+            min-width: 140px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+        
+        .lang-switcher:hover .lang-dropdown,
+        .lang-dropdown:hover {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .lang-dropdown a {
+            display: block;
+            padding: 10px 14px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            transition: all 0.15s ease;
+        }
+        
+        .lang-dropdown a:hover {
+            background: var(--accent-soft);
+            color: var(--text-main);
+        }
+        
+        /* Custom Cursor */
+        .custom-cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease;
+            mix-blend-mode: difference;
+        }
+        
+        .custom-cursor.hovering {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 59, 48, 0.1);
+        }
+        
+        @media (pointer: coarse) {
+            .custom-cursor {
+                display: none;
+            }
+        }
+        
+        /* Particle Background Canvas */
+        .particles-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.4;
+        }
+        
+        /* Simple 3D Element (#13) */
+        .scene-3d {
+            perspective: 600px;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cube {
+            width: 80px;
+            height: 80px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotateCube 8s infinite linear;
+        }
+        
+        .cube-face {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--accent);
+            background: var(--accent-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--accent);
+            opacity: 0.8;
+        }
+        
+        .cube-face:nth-child(1) { transform: translateZ(40px); }
+        .cube-face:nth-child(2) { transform: rotateY(180deg) translateZ(40px); }
+        .cube-face:nth-child(3) { transform: rotateY(90deg) translateZ(40px); }
+        .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(40px); }
+        .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(40px); }
+        .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(40px); }
+        
+        @keyframes rotateCube {
+            from { transform: rotateX(-20deg) rotateY(0deg); }
+            to { transform: rotateX(-20deg) rotateY(360deg); }
+        }
     </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+    
+    <!-- Particle Background -->
+    <canvas class="particles-canvas" id="particlesCanvas"></canvas>
+    
     <!-- Skip to Content Link -->
     <a href="#main-content" class="skip-to-content">Skip to content</a>
     
@@ -187,6 +345,21 @@
                         <span class="icon-moon">☾</span>
                     </button>
 
+                    <div class="lang-switcher">
+                        <button class="lang-btn" id="langBtn" aria-label="Select Language">
+                            <span class="lang-current">EN</span>
+                        </button>
+                        <div class="lang-dropdown" id="langDropdown">
+                            <a href="?lang=en" data-lang="en">English</a>
+                            <a href="?lang=es" data-lang="es">Español</a>
+                            <a href="?lang=fr" data-lang="fr">Français</a>
+                            <a href="?lang=de" data-lang="de">Deutsch</a>
+                            <a href="?lang=ja" data-lang="ja">日本語</a>
+                            <a href="?lang=zh" data-lang="zh">中文</a>
+                            <a href="?lang=cy" data-lang="cy">Cymraeg</a>
+                        </div>
+                    </div>
+
                     <div class="nav-links">
                         <a href="#about">About</a>
                         <a href="#work">Work</a>
@@ -210,20 +383,16 @@
             </div>
             
             <div class="hero-visual slide-in-right animation-reset">
-                <div class="browser-mockup">
-                    <div class="browser-header">
-                        <div class="dot red"></div>
-                        <div class="dot yellow"></div>
-                        <div class="dot green"></div>
-                    </div>
-                    <div class="browser-content">
-                        <div class="code-skeleton">
-                            <div class="skeleton-line w-50"></div>
-                            <div class="skeleton-line w-80"></div>
-                            <div class="skeleton-line w-80"></div>
-                            <div class="skeleton-line w-30"></div>
-                            <div class="skeleton-line w-50"></div>
-                            <div class="skeleton-line w-80"></div>
+                <!-- Simple 3D Rotating Cube -->
+                <div class="browser-mockup" style="background: transparent; border: none; box-shadow: none;">
+                    <div class="scene-3d">
+                        <div class="cube">
+                            <div class="cube-face">◉</div>
+                            <div class="cube-face">◈</div>
+                            <div class="cube-face">◈</div>
+                            <div class="cube-face">◈</div>
+                            <div class="cube-face">◈</div>
+                            <div class="cube-face">◈</div>
                         </div>
                     </div>
                 </div>
@@ -236,7 +405,7 @@
                 <div class="project-grid">
                     <article class="project-card">
                         <div class="card-image">
-                            <img src="https://github.com/oliver-lebaigue-bright-bench.png" alt="Oliver Lebaigue">
+                            <img loading="lazy" src="https://github.com/oliver-lebaigue-bright-bench.png" alt="Oliver Lebaigue">
                         </div>
                         <div class="card-content">
                             <div class="card-tags">Founder / Developer</div>
@@ -248,7 +417,7 @@
 
                     <article class="project-card">
                         <div class="card-image">
-                            <img src="https://github.com/cubezockii.png" alt="Felix">
+                            <img loading="lazy" src="https://github.com/cubezockii.png" alt="Felix">
                         </div>
                         <div class="card-content">
                             <div class="card-tags">Developer</div>
@@ -260,7 +429,7 @@
 
                     <article class="project-card">
                         <div class="card-image">
-                            <img src="https://github.com/gething-hughes-pet-paths.png" alt="Gethin Hughes">
+                            <img loading="lazy" src="https://github.com/gething-hughes-pet-paths.png" alt="Gethin Hughes">
                         </div>
                         <div class="card-content">
                             <div class="card-tags">Tester / Outreach</div>
@@ -272,7 +441,7 @@
 
                     <article class="project-card">
                         <div class="card-image" style="display: flex; align-items: center; justify-content: center; background: var(--border-color);">
-                            <img src="https://github.com/hydrogen10234u4.png" alt="Startrail">
+                            <img loading="lazy" src="https://github.com/hydrogen10234u4.png" alt="Startrail">
                         </div>
                         <div class="card-content">
                             <div class="card-tags">Graphic Design / Web Testing</div>
@@ -337,7 +506,7 @@
                 
                 <article class="project-card">
                     <div class="card-image">
-                        <img src="images/flux.png" alt="Flux-OS Code">
+                        <img loading="lazy" src="images/flux.png" alt="Flux-OS Code">
                     </div>
                     <div class="card-content">
                         <div class="card-tags">Systems Programming / Assembly</div>
@@ -349,7 +518,7 @@
 
                 <article class="project-card">
                     <div class="card-image">
-                        <img src="images/nextbeat.png" alt="NextBeat Party Interface">
+                        <img loading="lazy" src="images/nextbeat.png" alt="NextBeat Party Interface">
                     </div>
                     <div class="card-content">
                         <div class="card-tags">Social / Real-time</div>
@@ -361,7 +530,7 @@
 
                 <article class="project-card">
                     <div class="card-image">
-                        <img src="https://pet-paths.netlify.app/favicon.ico" style="object-fit: contain; background: #fff; padding: 20px;" alt="Pet Paths Logo">
+                        <img loading="lazy" src="https://pet-paths.netlify.app/favicon.ico" style="object-fit: contain; background: #fff; padding: 20px;" alt="Pet Paths Logo">
                     </div>
                     <div class="card-content">
                         <div class="card-tags">Community / Safety</div>
