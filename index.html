@@ -196,7 +196,7 @@
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 8px;
-            min-width: 140px;
+            min-width: 160px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             opacity: 0;
             visibility: hidden;
@@ -213,7 +213,9 @@
         }
         
         .lang-dropdown a {
-            display: block;
+            display: flex;
+            align-items: center;
+            gap: 10px;
             padding: 10px 14px;
             border-radius: 8px;
             font-size: 0.9rem;
@@ -224,6 +226,26 @@
         .lang-dropdown a:hover {
             background: var(--accent-soft);
             color: var(--text-main);
+        }
+        
+        .lang-flag {
+            width: 24px;
+            height: 16px;
+            object-fit: contain;
+            border-radius: 2px;
+        }
+        
+        .lang-current-flag {
+            width: 32px;
+            height: 21px;
+            object-fit: contain;
+            border-radius: 2px;
+        }
+        
+        .lang-btn {
+            width: 48px;
+            height: 48px;
+            padding: 6px;
         }
         
         /* Custom Cursor */
@@ -266,46 +288,45 @@
         
         /* Simple 3D Element (#13) */
         .scene-3d {
-            perspective: 600px;
+            perspective: 800px;
             width: 100%;
-            height: 100%;
+            min-height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
         
         .cube {
-            width: 80px;
-            height: 80px;
+            width: 150px;
+            height: 150px;
             position: relative;
             transform-style: preserve-3d;
-            animation: rotateCube 8s infinite linear;
+            animation: rotateCube 10s infinite linear;
         }
         
         .cube-face {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 150px;
+            height: 150px;
             border: 2px solid var(--accent);
             background: var(--accent-soft);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
             color: var(--accent);
-            opacity: 0.8;
+            opacity: 0.9;
         }
         
-        .cube-face:nth-child(1) { transform: translateZ(40px); }
-        .cube-face:nth-child(2) { transform: rotateY(180deg) translateZ(40px); }
-        .cube-face:nth-child(3) { transform: rotateY(90deg) translateZ(40px); }
-        .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(40px); }
-        .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(40px); }
-        .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(40px); }
+        .cube-face:nth-child(1) { transform: translateZ(75px); }
+        .cube-face:nth-child(2) { transform: rotateY(180deg) translateZ(75px); }
+        .cube-face:nth-child(3) { transform: rotateY(90deg) translateZ(75px); }
+        .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(75px); }
+        .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(75px); }
+        .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(75px); }
         
         @keyframes rotateCube {
-            from { transform: rotateX(-20deg) rotateY(0deg); }
-            to { transform: rotateX(-20deg) rotateY(360deg); }
+            from { transform: rotateX(-25deg) rotateY(0deg); }
+            to { transform: rotateX(-25deg) rotateY(360deg); }
         }
     </style>
 </head>
@@ -347,16 +368,16 @@
 
                     <div class="lang-switcher">
                         <button class="lang-btn" id="langBtn" aria-label="Select Language">
-                            <span class="lang-current">EN</span>
+                            <img class="lang-current-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23012169'/%3E%3Cpath d='M0 0l60 40M60 0L0 40' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='2'/%3E%3Crect width='60' height='20' fill='%23fff'/%3E%3Crect x='25' y='0' width='10' height='40' fill='%23fff'/%3E%3Crect width='60' height='20' fill='%23C8102E'/%3E%3Crect x='25' y='0' width='10' height='40' fill='%23C8102E'/%3E%3C/svg%3E" alt="EN">
                         </button>
                         <div class="lang-dropdown" id="langDropdown">
-                            <a href="?lang=en" data-lang="en">English</a>
-                            <a href="?lang=es" data-lang="es">Español</a>
-                            <a href="?lang=fr" data-lang="fr">Français</a>
-                            <a href="?lang=de" data-lang="de">Deutsch</a>
-                            <a href="?lang=ja" data-lang="ja">日本語</a>
-                            <a href="?lang=zh" data-lang="zh">中文</a>
-                            <a href="?lang=cy" data-lang="cy">Cymraeg</a>
+                            <a href="?lang=en" data-lang="en"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23012169'/%3E%3Cpath d='M0 0l60 40M60 0L0 40' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='2'/%3E%3Crect width='60' height='20' fill='%23fff'/%3E%3Crect x='25' y='0' width='10' height='40' fill='%23fff'/%3E%3Crect width='60' height='20' fill='%23C8102E'/%3E%3Crect x='25' y='0' width='10' height='40' fill='%23C8102E'/%3E%3C/svg%3E" alt="English"> English</a>
+                            <a href="?lang=es" data-lang="es"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23AA151B'/%3E%3Crect y='10' width='60' height='20' fill='%23F1BF00'/%3E%3Crect width='60' height='40' fill='none' stroke='%23AA151B' stroke-width='1'/%3E%3C/svg%3E" alt="Español"> Español</a>
+                            <a href="?lang=fr" data-lang="fr"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%230020A0'/%3E%3Crect width='20' height='40' fill='%23fff'/%3E%3Crect x='40' width='20' height='40' fill='%23ED2939'/%3E%3C/svg%3E" alt="Français"> Français</a>
+                            <a href="?lang=de" data-lang="de"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23000'/%3E%3Crect width='60' height='13.33' fill='%23DD0000'/%3E%3Crect width='60' y='26.66' height='13.33' fill='%23FFCE00'/%3E%3C/svg%3E" alt="Deutsch"> Deutsch</a>
+                            <a href="?lang=ja" data-lang="ja"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23fff'/%3E%3Ccircle cx='30' cy='20' r='10' fill='%23BC002D'/%3E%3C/svg%3E" alt="日本語"> 日本語</a>
+                            <a href="?lang=zh" data-lang="zh"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23DE2910'/%3E%3Cpath d='M15 5l2.5 7.5h8l-6.5 4.5 2.5 7.5-6.5-4.5-6.5 4.5 2.5-7.5-6.5-4.5h8z' fill='%23FFDE00'/%3E%3C/svg%3E" alt="中文"> 中文</a>
+                            <a href="?lang=cy" data-lang="cy"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23fff'/%3E%3Crect width='60' height='8' fill='%23D13737'/%3E%3Crect y='16' width='60' height='8' fill='%23fff'/%3E%3Crect y='32' width='60' height='8' fill='%232C6B2F'/%3E%3Crect width='60' height='2' fill='%23000'/%3E%3Crect y='6' width='60' height='2' fill='%23000'/%3E%3Crect y='14' width='60' height='2' fill='%23000'/%3E%3Crect y='24' width='60' height='2' fill='%23000'/%3E%3Crect y='30' width='60' height='2' fill='%23000'/%3E%3Crect y='38' width='60' height='2' fill='%23000'/%3E%3C/svg%3E" alt="Cymraeg"> Cymraeg</a>
                         </div>
                     </div>
 
@@ -387,12 +408,12 @@
                 <div class="browser-mockup" style="background: transparent; border: none; box-shadow: none;">
                     <div class="scene-3d">
                         <div class="cube">
-                            <div class="cube-face">◉</div>
-                            <div class="cube-face">◈</div>
-                            <div class="cube-face">◈</div>
-                            <div class="cube-face">◈</div>
-                            <div class="cube-face">◈</div>
-                            <div class="cube-face">◈</div>
+                            <div class="cube-face"></div>
+                            <div class="cube-face"></div>
+                            <div class="cube-face"></div>
+                            <div class="cube-face"></div>
+                            <div class="cube-face"></div>
+                            <div class="cube-face"></div>
                         </div>
                     </div>
                 </div>
