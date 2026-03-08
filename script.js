@@ -137,8 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
             teamTitle: 'The Team',
             founder: 'Founder / Developer',
             developer: 'Developer',
-            tester: 'Tester / Outreach',
-            graphicDesign: 'Graphic Design / Web Testing',
+            tester: 'Tester / Editor / Marketing',
+            testerMarketing: 'Tester / Marketing',
+            graphicDesign: 'Graphic Design',
             joinCommunity: 'Join the Community',
             moreToCome: 'More to Come',
             teamDesc: "We're always looking for creative minds to join our workshop. If you're interested in building honest tools at the intersection of design and engineering, reach out and say hello.",
@@ -194,7 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
             founder: 'Fundador / Desarrollador',
             developer: 'Desarrollador',
             tester: 'Probador / Comunicación',
-            graphicDesign: 'Diseño Gráfico / Pruebas Web',
+            testerMarketing: 'Probador / Comunicación',
+            graphicDesign: 'Diseño Gráfico',
             joinCommunity: 'Únete a la Comunidad',
             moreToCome: 'Más por Venir',
             teamDesc: 'Siempre buscamos mentes creativas para nuestro taller. Si te interesa construir herramientas honestas en la intersección del diseño y la ingeniería, contáctanos.',
@@ -246,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
             founder: 'Fondateur / Développeur',
             developer: 'Développeur',
             tester: 'Testeur / Communication',
-            graphicDesign: 'Design Graphique / Tests Web',
+            graphicDesign: 'Design Graphique',
             joinCommunity: 'Rejoindre la Communauté',
             moreToCome: 'Plus à Venir',
             teamDesc: "Nous recherchons toujours des esprits créatifs pour notre atelier. Si vous êtes intéressé par la construction d'outils honnêtes à l'intersection du design et de l'ingénierie, contactez-nous.",
@@ -298,7 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
             founder: 'Gründer / Entwickler',
             developer: 'Entwickler',
             tester: 'Tester / Öffentlichkeitsarbeit',
-            graphicDesign: 'Grafikdesign / Web-Tests',
+            graphicDesign: 'Grafikdesign',
             joinCommunity: 'Der Community Beitreten',
             moreToCome: 'Mehr Kommt',
             teamDesc: 'Wir suchen immer nach kreativen Köpfen für unsere Werkstatt. Wenn Sie daran interessiert sind, ehrliche Tools an der Schnittstelle von Design und Ingenieurwesen zu bauen, kontaktieren Sie uns.',
@@ -350,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
             founder: '創業者/開発者',
             developer: '開発者',
             tester: 'テスター/アウトリーチ',
-            graphicDesign: 'グラフィックデザイン/Webテスト',
+            graphicDesign: 'グラフィックデザイン',
             joinCommunity: 'コミュニティに参加',
             moreToCome: 'さらなるharapkan',
             teamDesc: '私たちは常にワークショップに加わるクリエイティブマインドを探しています。デザインとエンジニアリングの境界目で正直なツール構築に興味があるなら、ぜひご連絡ください。',
@@ -402,7 +404,7 @@ document.addEventListener('DOMContentLoaded', () => {
             founder: '创始人/开发者',
             developer: '开发者',
             tester: '测试/外联',
-            graphicDesign: '平面设计/Web测试',
+            graphicDesign: '平面设计',
             joinCommunity: '加入社区',
             moreToCome: '更多即将到来',
             teamDesc: '我们一直在寻找有创意的头脑加入我们的工作室。如果您对在设计与工程交汇处打造真诚工具感兴趣，请联系我们。',
@@ -538,10 +540,10 @@ document.addEventListener('DOMContentLoaded', () => {
         url.searchParams.set('lang', lang);
         window.history.replaceState({}, '', url);
         
-        // Update button flag image
-        const langBtnFlag = document.querySelector('.lang-current-flag');
-        if (langBtnFlag && langFlags[lang]) {
-            langBtnFlag.src = langFlags[lang];
+        // Update button text
+        const langCurrentCode = document.querySelector('.lang-current-code');
+        if (langCurrentCode && langNames[lang]) {
+            langCurrentCode.textContent = langNames[lang];
         }
         
         // Apply translations to page
@@ -591,16 +593,20 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (teamRoles[1]) teamRoles[1].textContent = t.developer;
         if (teamDescs[1]) teamDescs[1].textContent = "Creative developer focused on bringing innovative ideas to life through code.";
+        if (teamLinks[1]) teamLinks[1].textContent = t.viewGithub + ' →';
         
         if (teamRoles[2]) teamRoles[2].textContent = t.tester;
-        if (teamDescs[2]) teamDescs[2].textContent = "Full-stack developer passionate about building robust and elegant solutions.";
+        if (teamDescs[2]) teamDescs[2].textContent = "Quality assurance specialist ensuring every release meets the highest standards.";
         
-        if (teamRoles[3]) teamRoles[3].textContent = t.graphicDesign;
-        if (teamDescs[3]) teamDescs[3].textContent = "Graphic designer and web-only tester bringing visual design and quality assurance to the team.";
+        if (teamRoles[3])
+        if (teamDescs[3]) teamDescs[3].textContent = "Tester making sure that shipped software is perfect and safe to use.";
         
-        if (teamRoles[4]) teamRoles[4].textContent = t.joinCommunity;
-        if (teamDescs[4]) teamDescs[4].textContent = t.teamDesc;
-        if (teamLinks[1]) teamLinks[1].textContent = t.getInTouch + ' →';
+        if (teamRoles[4]) teamRoles[4].textContent = t.graphicDesign;
+        if (teamDescs[4]) teamDescs[4].textContent = "Graphic designer bringing visual design and quality to the team.";
+        
+        if (teamRoles[5]) teamRoles[5].textContent = t.joinCommunity;
+        if (teamDescs[5]) teamDescs[5].textContent = t.teamDesc;
+        if (teamLinks[5]) teamLinks[5].textContent = t.getInTouch + ' →';
         
         // Focus Section
         const focusTitle = document.querySelector('#focus .section-title');
@@ -690,9 +696,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Initialize language
     const currentLang = getCurrentLanguage();
-    const langBtnFlag = document.querySelector('.lang-current-flag');
-    if (langBtnFlag && langFlags[currentLang]) {
-        langBtnFlag.src = langFlags[currentLang];
+    const langCurrentCode = document.querySelector('.lang-current-code');
+    if (langCurrentCode && langNames[currentLang]) {
+        langCurrentCode.textContent = langNames[currentLang];
     }
     
     // Apply translations on page load

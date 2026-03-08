@@ -374,7 +374,7 @@ nav {
 /* Unified Grid for Team and Projects */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columns for team */
+    grid-template-columns: repeat(4, 1fr); /* 3 columns for team - works better with 6 cards */
     gap: var(--spacing-sm);
 }
 

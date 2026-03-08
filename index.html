@@ -228,24 +228,23 @@
             color: var(--text-main);
         }
         
-        .lang-flag {
-            width: 24px;
-            height: 16px;
-            object-fit: contain;
-            border-radius: 2px;
-        }
-        
-        .lang-current-flag {
-            width: 32px;
-            height: 21px;
-            object-fit: contain;
-            border-radius: 2px;
-        }
-        
         .lang-btn {
             width: 48px;
             height: 48px;
             padding: 6px;
+            font-size: 0.85rem;
+        }
+        
+        .lang-current-code {
+            font-weight: 700;
+            font-size: 0.85rem;
+        }
+        
+        .lang-code {
+            font-weight: 700;
+            font-size: 0.85rem;
+            width: 28px;
+            display: inline-block;
         }
         
         /* Custom Cursor */
@@ -368,16 +367,16 @@
 
                     <div class="lang-switcher">
                         <button class="lang-btn" id="langBtn" aria-label="Select Language">
-                            <img class="lang-current-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23012169'/%3E%3Cpath d='M0 0l60 40M60 0L0 40' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='2'/%3E%3Crect width='60' height='20' fill='%23fff'/%3E%3Crect x='25' y='0' width='10' height='40' fill='%23fff'/%3E%3Crect width='60' height='20' fill='%23C8102E'/%3E%3Crect x='25' y='0' width='10' height='40' fill='%23C8102E'/%3E%3C/svg%3E" alt="EN">
+                            <span class="lang-current-code">EN</span>
                         </button>
                         <div class="lang-dropdown" id="langDropdown">
-                            <a href="?lang=en" data-lang="en"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23012169'/%3E%3Cpath d='M0 0l60 40M60 0L0 40' stroke='%23fff' stroke-width='6'/%3E%3Cpath d='M0 0l60 40M60 0L0 40' stroke='%23C8102E' stroke-width='2'/%3E%3Crect width='60' height='20' fill='%23fff'/%3E%3Crect x='25' y='0' width='10' height='40' fill='%23fff'/%3E%3Crect width='60' height='20' fill='%23C8102E'/%3E%3Crect x='25' y='0' width='10' height='40' fill='%23C8102E'/%3E%3C/svg%3E" alt="English"> English</a>
-                            <a href="?lang=es" data-lang="es"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23AA151B'/%3E%3Crect y='10' width='60' height='20' fill='%23F1BF00'/%3E%3Crect width='60' height='40' fill='none' stroke='%23AA151B' stroke-width='1'/%3E%3C/svg%3E" alt="Español"> Español</a>
-                            <a href="?lang=fr" data-lang="fr"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%230020A0'/%3E%3Crect width='20' height='40' fill='%23fff'/%3E%3Crect x='40' width='20' height='40' fill='%23ED2939'/%3E%3C/svg%3E" alt="Français"> Français</a>
-                            <a href="?lang=de" data-lang="de"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23000'/%3E%3Crect width='60' height='13.33' fill='%23DD0000'/%3E%3Crect width='60' y='26.66' height='13.33' fill='%23FFCE00'/%3E%3C/svg%3E" alt="Deutsch"> Deutsch</a>
-                            <a href="?lang=ja" data-lang="ja"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23fff'/%3E%3Ccircle cx='30' cy='20' r='10' fill='%23BC002D'/%3E%3C/svg%3E" alt="日本語"> 日本語</a>
-                            <a href="?lang=zh" data-lang="zh"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23DE2910'/%3E%3Cpath d='M15 5l2.5 7.5h8l-6.5 4.5 2.5 7.5-6.5-4.5-6.5 4.5 2.5-7.5-6.5-4.5h8z' fill='%23FFDE00'/%3E%3C/svg%3E" alt="中文"> 中文</a>
-                            <a href="?lang=cy" data-lang="cy"><img class="lang-flag" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 40'%3E%3Crect width='60' height='40' fill='%23fff'/%3E%3Crect width='60' height='8' fill='%23D13737'/%3E%3Crect y='16' width='60' height='8' fill='%23fff'/%3E%3Crect y='32' width='60' height='8' fill='%232C6B2F'/%3E%3Crect width='60' height='2' fill='%23000'/%3E%3Crect y='6' width='60' height='2' fill='%23000'/%3E%3Crect y='14' width='60' height='2' fill='%23000'/%3E%3Crect y='24' width='60' height='2' fill='%23000'/%3E%3Crect y='30' width='60' height='2' fill='%23000'/%3E%3Crect y='38' width='60' height='2' fill='%23000'/%3E%3C/svg%3E" alt="Cymraeg"> Cymraeg</a>
+                            <a href="?lang=en" data-lang="en"><span class="lang-code">EN</span> English</a>
+                            <a href="?lang=es" data-lang="es"><span class="lang-code">ES</span> Español</a>
+                            <a href="?lang=fr" data-lang="fr"><span class="lang-code">FR</span> Français</a>
+                            <a href="?lang=de" data-lang="de"><span class="lang-code">DE</span> Deutsch</a>
+                            <a href="?lang=ja" data-lang="ja"><span class="lang-code">JA</span> 日本語</a>
+                            <a href="?lang=zh" data-lang="zh"><span class="lang-code">ZH</span> 中文</a>
+                            <a href="?lang=cy" data-lang="cy"><span class="lang-code">CY</span> Cymraeg</a>
                         </div>
                     </div>
 
@@ -450,12 +449,24 @@
 
                     <article class="project-card">
                         <div class="card-image">
+                            <img loading="lazy" src="https://github.com/aleks-levet.png" alt="aleks-levet">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-tags">Tester / Editor / Marketing</div>
+                            <h3 class="card-title">Aleks-Levet</h3>
+                            <p class="card-desc">Testing and giving constructive feedback, also helps promote and do videos</p>
+                            <a href="https://github.com/aleks-levet" target="_blank" class="card-link">View Github <span>&rarr;</span></a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="card-image">
                             <img loading="lazy" src="https://github.com/gething-hughes-pet-paths.png" alt="Gethin Hughes">
                         </div>
                         <div class="card-content">
-                            <div class="card-tags">Tester / Outreach</div>
+                            <div class="card-tags">Tester / Marketing</div>
                             <h3 class="card-title">Gethin Hughes</h3>
-                            <p class="card-desc">Full-stack developer passionate about building robust and elegant solutions.</p>
+                            <p class="card-desc">Tester making sure that shipped software is perect and safe to use.</p>
                             <a href="https://https://github.com/gething-hughes-pet-paths" target="_blank" class="card-link">View GitHub <span>&rarr;</span></a>
                         </div>
                     </article>
@@ -468,6 +479,7 @@
                             <div class="card-tags">Graphic Design / Web Testing</div>
                             <h3 class="card-title">Startrail</h3>
                             <p class="card-desc">Graphic designer and web-only tester bringing visual design and quality assurance to the team.</p>
+                            <a href="https://github.com/hydrogen10234u4" target="_blank" class="card-link">View Github <span>&rarr;</span></a>
                         </div>
                     </article>
 
