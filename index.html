@@ -1,36 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Luminus Labs: A creative and technical umbrella brand by Oliver Lebaigue, Gethin Hughes, Startrail and Cubzockii.">
+    <meta name="description"
+        content="Luminus Labs: A creative and technical umbrella brand by Oliver Lebaigue, Gethin Hughes, Startrail and Cubzockii.">
     <title>Luminus Labs</title>
-    
+
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Luminus Labs">
-    <meta property="og:description" content="A human-scale workshop where ideas are sketched, tested, and refined. A team of creators building honest tools at the intersection of design and engineering.">
+    <meta property="og:description"
+        content="A human-scale workshop where ideas are sketched, tested, and refined. A team of creators building honest tools at the intersection of design and engineering.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://luminus-labs.netlify.app/">
     <meta property="og:image" content="https://luminus-labs.netlify.app/images/flux.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Luminus Labs">
     <meta name="twitter:description" content="A human-scale workshop where ideas are sketched, tested, and refined.">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>◉</text></svg>">
 </head>
+
 <body>
     <!-- Custom Cursor -->
     <div class="custom-cursor" id="customCursor"></div>
-    
+
     <!-- Particle Background -->
     <canvas class="particles-canvas" id="particlesCanvas"></canvas>
-    
+
     <!-- Skip to Content Link -->
     <a href="#main-content" class="skip-to-content">Skip to content</a>
-    
+
     <!-- Preloader -->
     <div class="preloader" id="preloader">
         <div class="preloader-content">
@@ -42,7 +47,7 @@
             </div>
         </div>
     </div>
-    
+
     <header>
         <div class="container">
             <nav>
@@ -50,7 +55,7 @@
                     <div class="logo-icon"></div>
                     Luminus Labs
                 </a>
-                
+
                 <div class="nav-right">
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle Dark Mode">
                         <span class="icon-sun">☀</span>
@@ -68,17 +73,18 @@
         </div>
     </header>
 
-<main id="main-content">
+    <main id="main-content">
         <section class="hero container fade-in-section animation-reset">
             <div class="hero-text">
                 <h1>Curiosity. Code. Craft.</h1>
-                <p>Luminus Labs is a human-scale workshop where ideas are sketched, tested, and refined. A team of creators building honest tools at the intersection of design and engineering.</p>
+                <p>Luminus Labs is a human-scale workshop where ideas are sketched, tested, and refined. A team of
+                    creators building honest tools at the intersection of design and engineering.</p>
                 <div class="hero-actions">
                     <a href="#work" class="btn btn-primary">View Projects</a>
                     <a href="#about" class="btn btn-secondary">Meet the Team</a>
                 </div>
             </div>
-            
+
             <div class="hero-visual slide-in-right animation-reset">
                 <!-- Simple 3D Rotating Cube -->
                 <div class="browser-mockup" style="background: transparent; border: none; box-shadow: none;">
@@ -100,75 +106,91 @@
             <div class="container">
                 <h2 class="section-title">The Team</h2>
                 <div class="project-grid">
-                    <article class="project-card">
+                    <article class="project-card team-member" data-member="oliver">
                         <div class="card-image">
-                            <img loading="lazy" src="https://github.com/oliver-lebaigue-2-bright-bench.png" alt="Oliver Lebaigue">
+                            <img loading="lazy" src="https://github.com/oliver-lebaigue-2-bright-bench.png"
+                                alt="Oliver Lebaigue">
                         </div>
                         <div class="card-content">
                             <div class="card-tags">Founder / Developer</div>
                             <h3 class="card-title">Oliver Lebaigue</h3>
-                            <p class="card-desc">The original creator and founder of Luminus Labs. Systems programmer and designer building honest tools at the intersection of code and craft.</p>
-                            <a href="https://github.com/oliver-lebaigue-2-bright-bench" target="_blank" class="card-link">View GitHub <span>&rarr;</span></a>
+                            <p class="card-desc">The original creator and founder of Luminus Labs. Systems programmer
+                                and designer building honest tools at the intersection of code and craft.</p>
+                            <a href="https://github.com/oliver-lebaigue-2-bright-bench" target="_blank"
+                                class="card-link">View GitHub <span>&rarr;</span></a>
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card team-member" data-member="cubezockii">
                         <div class="card-image">
-                            <img loading="lazy" src="https://github.com/cubezockii.png" alt="Felix">
+                            <img loading="lazy" src="https://github.com/cubezockii.png" alt="CubeZockii">
                         </div>
                         <div class="card-content">
                             <div class="card-tags">Developer</div>
                             <h3 class="card-title">Cubezockii</h3>
-                            <p class="card-desc">Creative developer focused on bringing innovative ideas to life through code.</p>
-                            <a href="https://github.com/cubezockii" target="_blank" class="card-link">View GitHub <span>&rarr;</span></a>
+                            <p class="card-desc">Creative developer focused on bringing innovative ideas to life through
+                                code.</p>
+                            <a href="https://github.com/cubezockii" target="_blank" class="card-link">View GitHub
+                                <span>&rarr;</span></a>
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card team-member" data-member="aleks">
                         <div class="card-image">
-                            <img loading="lazy" src="https://github.com/aleks-levet.png" alt="aleks-levet">
+                            <img loading="lazy" src="https://github.com/aleks-levet.png" alt="Aleks-Levet">
                         </div>
                         <div class="card-content">
                             <div class="card-tags">Tester / Editor / Marketing</div>
                             <h3 class="card-title">Aleks-Levet</h3>
-                            <p class="card-desc">Testing and giving constructive feedback, also helps promote and do videos</p>
-                            <a href="https://github.com/aleks-levet" target="_blank" class="card-link">View Github <span>&rarr;</span></a>
+                            <p class="card-desc">Testing and giving constructive feedback, also helps promote and do
+                                videos</p>
+                            <a href="https://github.com/aleks-levet" target="_blank" class="card-link">View Github
+                                <span>&rarr;</span></a>
                         </div>
                     </article>
 
-                    <article class="project-card">
+                    <article class="project-card team-member" data-member="gethin">
                         <div class="card-image">
-                            <img loading="lazy" src="https://github.com/gething-hughes-pet-paths.png" alt="Gethin Hughes">
+                            <img loading="lazy" src="https://github.com/gething-hughes-pet-paths.png"
+                                alt="Gethin Hughes">
                         </div>
                         <div class="card-content">
                             <div class="card-tags">Tester / Marketing</div>
                             <h3 class="card-title">Gethin Hughes</h3>
                             <p class="card-desc">Tester making sure that shipped software is perect and safe to use.</p>
-                            <a href="https://https://github.com/gething-hughes-pet-paths" target="_blank" class="card-link">View GitHub <span>&rarr;</span></a>
+                            <a href="https://https://github.com/gething-hughes-pet-paths" target="_blank"
+                                class="card-link">View GitHub <span>&rarr;</span></a>
                         </div>
                     </article>
 
-                    <article class="project-card">
-                        <div class="card-image" style="display: flex; align-items: center; justify-content: center; background: var(--border-color);">
+                    <article class="project-card team-member" data-member="startrail">
+                        <div class="card-image"
+                            style="display: flex; align-items: center; justify-content: center; background: var(--border-color);">
                             <img loading="lazy" src="https://github.com/hydrogen10234u4.png" alt="Startrail">
                         </div>
                         <div class="card-content">
                             <div class="card-tags">Graphic Design / Web Testing</div>
                             <h3 class="card-title">Startrail</h3>
-                            <p class="card-desc">Graphic designer and web-only tester bringing visual design and quality assurance to the team.</p>
-                            <a href="https://github.com/hydrogen10234u4" target="_blank" class="card-link">View Github <span>&rarr;</span></a>
+                            <p class="card-desc">Graphic designer and web-only tester bringing visual design and quality
+                                assurance to the team.</p>
+                            <a href="https://github.com/hydrogen10234u4" target="_blank" class="card-link">View Github
+                                <span>&rarr;</span></a>
                         </div>
                     </article>
 
                     <article class="project-card card-span-2">
-                        <div class="card-image" style="display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--accent), #ff6b6b);">
+                        <div class="card-image"
+                            style="display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, var(--accent), #ff6b6b);">
                             <span style="font-size: 6rem; font-weight: 1000; color: white;">You</span>
                         </div>
                         <div class="card-content">
                             <div class="card-tags">Join the Community</div>
                             <h3 class="card-title">More to Come</h3>
-                            <p class="card-desc">We're always looking for creative minds to join our workshop. If you're interested in building honest tools at the intersection of design and engineering, reach out and say hello.</p>
-                            <a href="https://github.com/luminus-labs" target="_blank" class="card-link">Get in Touch <span>&rarr;</span></a>
+                            <p class="card-desc">We're always looking for creative minds to join our workshop. If you're
+                                interested in building honest tools at the intersection of design and engineering, reach
+                                out and say hello.</p>
+                            <a href="https://github.com/luminus-labs" target="_blank" class="card-link">Get in Touch
+                                <span>&rarr;</span></a>
                         </div>
                     </article>
                 </div>
@@ -183,9 +205,11 @@
             <div class="cp-card">
                 <div class="cp-icon">
                     <svg width="100" height="100" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM4 6H20V18H4V6Z" fill="currentColor"/>
-                        <path d="M6 10H8V12H6V10Z" fill="currentColor"/>
-                        <path d="M6 14H14V16H6V14Z" fill="currentColor"/>
+                        <path
+                            d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM4 6H20V18H4V6Z"
+                            fill="currentColor" />
+                        <path d="M6 10H8V12H6V10Z" fill="currentColor" />
+                        <path d="M6 14H14V16H6V14Z" fill="currentColor" />
                     </svg>
                 </div>
                 <div class="cp-content">
@@ -194,17 +218,24 @@
                         <span class="cp-tag">Active Development</span>
                     </h3>
                     <div class="cp-desc">
-                        <p>Flux-OS is a 32-bit, hobbyist operating system written from scratch in C and x86 Assembly. It aims to be a "Nothing OS" inspired desktop environment—minimalist, typography-driven, and philosophically bare metal.</p>
+                        <p>Flux-OS is a 32-bit, hobbyist operating system written from scratch in C and x86 Assembly. It
+                            aims to be a "Nothing OS" inspired desktop environment—minimalist, typography-driven, and
+                            philosophically bare metal.</p>
                         <br>
-                        <p><strong>Vision:</strong> To create a desktop experience that feels like a digital instrument cluster. No bloat. No clutter. Just raw interaction between user and machine.</p>
+                        <p><strong>Vision:</strong> To create a desktop experience that feels like a digital instrument
+                            cluster. No bloat. No clutter. Just raw interaction between user and machine.</p>
                         <br>
-                        <p>Currently in Pre-Alpha, the system boots successfully via GRUB into a protected-mode kernel. It features a custom software rasterizer (GFX) and a philosophy that exposes the Multiboot memory maps and interrupt descriptor tables to the user.</p>
+                        <p>Currently in Pre-Alpha, the system boots successfully via GRUB into a protected-mode kernel.
+                            It features a custom software rasterizer (GFX) and a philosophy that exposes the Multiboot
+                            memory maps and interrupt descriptor tables to the user.</p>
                         <br>
                         <p>"The void is not empty. It is full of potential."</p>
                     </div>
                     <div class="cp-footer">
-                        <a href="https://flux-os.netlify.app" target="_blank" class="btn btn-primary" style="padding: 8px 20px; font-size: 0.85rem;">Visit Site</a>
-                        <a href="https://github.com/oliver-lebaigue-2-bright-bench/Flux-OS" target="_blank" class="btn btn-secondary" style="padding: 8px 20px; font-size: 0.85rem;">View Repo</a>
+                        <a href="https://flux-os.netlify.app" target="_blank" class="btn btn-primary"
+                            style="padding: 8px 20px; font-size: 0.85rem;">Visit Site</a>
+                        <a href="https://github.com/oliver-lebaigue-2-bright-bench/Flux-OS" target="_blank"
+                            class="btn btn-secondary" style="padding: 8px 20px; font-size: 0.85rem;">View Repo</a>
                     </div>
                 </div>
             </div>
@@ -213,7 +244,7 @@
         <section id="work" class="projects container fade-in-section animation-reset">
             <h2 class="section-title">From the Bench</h2>
             <div class="project-grid">
-                
+
                 <article class="project-card">
                     <div class="card-image">
                         <img loading="lazy" src="images/flux.png" alt="Flux-OS Code">
@@ -221,8 +252,10 @@
                     <div class="card-content">
                         <div class="card-tags">Systems Programming / Assembly</div>
                         <h3 class="card-title">Flux-OS</h3>
-                        <p class="card-desc">A "Nothing OS" inspired desktop environment. Minimalist, typography-driven, and philosophically bare metal.</p>
-                        <a href="https://flux-os.netlify.app" target="_blank" class="card-link">View Live Site <span>&rarr;</span></a>
+                        <p class="card-desc">A "Nothing OS" inspired desktop environment. Minimalist, typography-driven,
+                            and philosophically bare metal.</p>
+                        <a href="https://flux-os.netlify.app" target="_blank" class="card-link">View Live Site
+                            <span>&rarr;</span></a>
                     </div>
                 </article>
 
@@ -233,20 +266,24 @@
                     <div class="card-content">
                         <div class="card-tags">Social / Real-time</div>
                         <h3 class="card-title">NextBeat</h3>
-                        <p class="card-desc">A social music platform built for moments, not algorithms. A democratic queue system where every guest contributes exactly one song.</p>
+                        <p class="card-desc">A social music platform built for moments, not algorithms. A democratic
+                            queue system where every guest contributes exactly one song.</p>
                         <a href="#" class="card-link">View Project <span>&rarr;</span></a>
                     </div>
                 </article>
 
                 <article class="project-card">
                     <div class="card-image">
-                        <img loading="lazy" src="https://pet-paths.netlify.app/favicon.ico" style="object-fit: contain; background: #fff; padding: 20px;" alt="Pet Paths Logo">
+                        <img loading="lazy" src="https://pet-paths.netlify.app/favicon.ico"
+                            style="object-fit: contain; background: #fff; padding: 20px;" alt="Pet Paths Logo">
                     </div>
                     <div class="card-content">
                         <div class="card-tags">Community / Safety</div>
                         <h3 class="card-title">Pet Paths</h3>
-                        <p class="card-desc">A mapping tool that treats local experience as expertise. It turns fragmented knowledge about local routes into shared, useful safety data.</p>
-                        <a href="https://pet-paths.netlify.app" target="_blank" class="card-link">Visit Live Site <span>&rarr;</span></a>
+                        <p class="card-desc">A mapping tool that treats local experience as expertise. It turns
+                            fragmented knowledge about local routes into shared, useful safety data.</p>
+                        <a href="https://pet-paths.netlify.app" target="_blank" class="card-link">Visit Live Site
+                            <span>&rarr;</span></a>
                     </div>
                 </article>
             </div>
@@ -259,17 +296,20 @@
                     <div class="value-card">
                         <span class="value-icon">◉</span>
                         <h3 class="value-title">Clarity & Restraint</h3>
-                        <p class="value-text">Interfaces that feel calm, intentional, and honest. Avoiding visual noise in favor of thoughtful simplicity, letting typography breathe.</p>
+                        <p class="value-text">Interfaces that feel calm, intentional, and honest. Avoiding visual noise
+                            in favor of thoughtful simplicity, letting typography breathe.</p>
                     </div>
                     <div class="value-card">
                         <span class="value-icon">◈</span>
                         <h3 class="value-title">Fundamentals First</h3>
-                        <p class="value-text">Respecting clean structure and maintainable code. Well-considered simplicity often outperforms unnecessary complexity.</p>
+                        <p class="value-text">Respecting clean structure and maintainable code. Well-considered
+                            simplicity often outperforms unnecessary complexity.</p>
                     </div>
                     <div class="value-card">
                         <span class="value-icon">❖</span>
                         <h3 class="value-title">Human Scale</h3>
-                        <p class="value-text">A workshop, not a factory. Every project is cared for deeply, with long hours spent refining small decisions rather than cutting corners.</p>
+                        <p class="value-text">A workshop, not a factory. Every project is cared for deeply, with long
+                            hours spent refining small decisions rather than cutting corners.</p>
                     </div>
                 </div>
             </div>
@@ -282,7 +322,9 @@
                 <h3>Interested in the process?</h3>
                 <a href="https://github.com/luminus-labs" target="_blank" class="github-link">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 0C5.37 0 0 5.37 0 12C0 17.31 3.435 21.795 8.205 23.385C8.805 23.49 9.03 23.13 9.03 22.815C9.03 22.53 9.015 21.585 9.015 20.58C6 21.135 5.22 19.845 4.98 19.17C4.845 18.825 4.26 17.76 3.75 17.475C3.33 17.25 2.73 16.695 3.735 16.68C4.68 16.665 5.355 17.55 5.58 17.91C6.66 19.725 8.385 19.215 9.075 18.9C9.18 18.12 9.495 17.595 9.84 17.295C7.17 16.995 4.38 15.96 4.38 11.37C4.38 10.065 4.845 8.985 5.61 8.145C5.49 7.845 5.07 6.615 5.73 4.965C5.73 4.965 6.735 4.65 9.03 6.195C9.99 5.925 11.01 5.79 12.03 5.79C13.05 5.79 14.07 5.925 15.03 6.195C17.325 4.635 18.33 4.965 18.33 4.965C18.99 6.615 18.57 7.845 18.45 8.145C19.215 8.985 19.68 10.05 19.68 11.37C19.68 15.975 16.875 16.995 14.205 17.295C14.64 17.67 15.015 18.39 15.015 19.515C15.015 21.12 15 22.42 15 22.815C15 23.13 15.225 23.505 15.825 23.385C20.565 21.795 24 17.31 24 12C24 5.37 18.63 0 12 0Z" fill="currentColor"/>
+                        <path
+                            d="M12 0C5.37 0 0 5.37 0 12C0 17.31 3.435 21.795 8.205 23.385C8.805 23.49 9.03 23.13 9.03 22.815C9.03 22.53 9.015 21.585 9.015 20.58C6 21.135 5.22 19.845 4.98 19.17C4.845 18.825 4.26 17.76 3.75 17.475C3.33 17.25 2.73 16.695 3.735 16.68C4.68 16.665 5.355 17.55 5.58 17.91C6.66 19.725 8.385 19.215 9.075 18.9C9.18 18.12 9.495 17.595 9.84 17.295C7.17 16.995 4.38 15.96 4.38 11.37C4.38 10.065 4.845 8.985 5.61 8.145C5.49 7.845 5.07 6.615 5.73 4.965C5.73 4.965 6.735 4.65 9.03 6.195C9.99 5.925 11.01 5.79 12.03 5.79C13.05 5.79 14.07 5.925 15.03 6.195C17.325 4.635 18.33 4.965 18.33 4.965C18.99 6.615 18.57 7.845 18.45 8.145C19.215 8.985 19.68 10.05 19.68 11.37C19.68 15.975 16.875 16.995 14.205 17.295C14.64 17.67 15.015 18.39 15.015 19.515C15.015 21.12 15 22.42 15 22.815C15 23.13 15.225 23.505 15.825 23.385C20.565 21.795 24 17.31 24 12C24 5.37 18.63 0 12 0Z"
+                            fill="currentColor" />
                     </svg>
                     Follow on GitHub
                 </a>
@@ -291,6 +333,32 @@
         </div>
     </footer>
 
+    <!-- Team Member Modal -->
+    <div class="modal-overlay" id="teamModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-header">
+                <img id="modalImage" src="" alt="Team Member" class="modal-image">
+                <div class="modal-header-text">
+                    <h3 id="modalName"></h3>
+                    <p id="modalRole" class="text-muted"></p>
+                </div>
+            </div>
+            <div class="modal-bio">
+                <p id="modalBio"></p>
+            </div>
+
+            <div class="modal-socials" id="modalSocials">
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
+
 </html>
