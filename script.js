@@ -170,7 +170,6 @@ const teamMembers = {
     bio: "Graphic designer and web-only tester bringing visual design and quality assurance to the team. Startrail combines artistic vision with technical precision to create visually stunning and functional interfaces.",
     socials: [
       { platform: "github", url: "https://github.com/hydrogen10234u4" },
-      { platform: "discord", url: "https://discord.com/users/753499312729751593", username: "starztrail" },
     ],
   },
 };
