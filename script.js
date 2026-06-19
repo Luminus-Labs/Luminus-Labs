@@ -177,7 +177,7 @@ const teamMembers = {
     role: "Developer / Tester",
     image: "https://github.com/nivalos0.png",
     bio: "Developer, making sure that eveyrthing is up to quality expectations and tester, making sure that everything works smoothly.",
-    social: [
+    socials: [
       { platform: "github", url: "https://github.com/nivalos0" },
       { platform: "youtube", url: "https://youtube.com/@feccm" },
       { platform: "discord", url: "https://discord.com/users/1299087195956842506", username: "nivalos" },
