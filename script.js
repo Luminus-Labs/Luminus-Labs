@@ -196,7 +196,7 @@ const teamMembers = {
   cookie: {
     name: "Cookie",
     role: "Devloper / Graphics designer / Tester / Outreach",
-    image: "https://github.com/cookidcdev.png",
+    image: "https://github.com/cookiedcdev.png",
     bio: "A cookie, and a developer. Nothing more to say.",
     socials: [
       { platform: "github", url: "https://github.com/cookiedcdev" },
