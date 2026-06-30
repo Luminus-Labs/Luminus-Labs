@@ -182,7 +182,8 @@ const teamMembers = {
       { platform: "youtube", url: "https://youtube.com/@feccm" },
       { platform: "discord", url: "https://discord.com/users/1299087195956842506", username: "nivalos" },
     ],
-    nivalos: {
+  },
+  gabibrawl: {
     name: "GabiBrawl",
     role: "Developer / Graphics designer",
     image: "https://github.com/gabibrawl.png",
@@ -190,6 +191,16 @@ const teamMembers = {
     socials: [
       { platform: "github", url: "https://github.com/gabibrawl" },
       { platform: "discord", url: "https://discord.com/users/1023212632708235345", username: "gabibrawl" },
+    ],
+  },
+  cookie: {
+    name: "Cookie",
+    role: "Devloper / Graphics designer / Tester / Outreach",
+    image: "https://github.com/cookidcdev.png",
+    bio: "A cookie, and a developer. Nothing more to say.",
+    socials: [
+      { platform: "github", url: "https://github.com/cookiedcdev" },
+      { platform: "discord", url: "https://discord.com/users/638840261715296332", username: "cookie.dev" },
     ],
   },
 };
