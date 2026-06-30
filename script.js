@@ -182,6 +182,15 @@ const teamMembers = {
       { platform: "youtube", url: "https://youtube.com/@feccm" },
       { platform: "discord", url: "https://discord.com/users/1299087195956842506", username: "nivalos" },
     ],
+    nivalos: {
+    name: "GabiBrawl",
+    role: "Developer / Graphics designer",
+    image: "https://github.com/gabibrawl.png",
+    bio: "Developer and electronics enthusiat. I build everything from clean web solutions to custom hardware, all the creativity at the core.",
+    socials: [
+      { platform: "github", url: "https://github.com/gabibrawl" },
+      { platform: "discord", url: "https://discord.com/users/1023212632708235345", username: "gabibrawl" },
+    ],
   },
 };
 
